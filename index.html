@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section id="section1">
+            <h3>1. osa: Kell</h3>
+            <div id="clock"></div>
+        </section>
+        <hr>
+        <section id="section2">
+            <h3>2. osa: Vormid</h3>
+            <form id="form">
+                <!-- input field --->
+                <div id="input-fields">
+                    <div id="first-name">
+                        <label for="fname">Eesnimi:</label>
+                        <input type="text" id="fname" name="fname">
+                    </div>
+                    <div id="last-name">
+                        <label for="lname">Perekonnanimi:</label>
+                        <input type="text" id="lname" name="lname">
+                    </div>
+                </div>
+                <!-- checkbox --->
+                <div id="form-checkbox">
+                    <div class="box">
+                        <input type="checkbox" id="v1" name="v1" value="present">
+                        <label for="vehicle1"> See on kingitus</label> <!-- 5€ --->
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" id="v2" name="v2" value="contactless">
+                        <label for="vehicle2"> Soovin kontaktivaba tarnet</label> <!-- 1€ --->
+                    </div>
+                </div>
+
+                <!-- dropdown --->
+                <div id="dropdown">
+                    <label for="linn">Valige linn: </label>
+                    <select name="linn" id="linn">
+                        <option value="">- Valige linn -</option>
+                        <option value="tln">Tallinn</option> <!-- 0€ --->
+                        <option value="trt">Tartu</option> <!-- 2.5€ --->
+                        <option value="nrv">Narva</option> <!-- 2.5€ --->
+                        <option value="prn">P&auml;rnu</option> <!-- 3€ --->
+                    </select>
+                </div>
+                <div id="calc">
+                    <input type="submit" value="Arvuta tarne hind:" id="btn-delivery">
+                </div>
+                <div id="delivery"></div>
+            </form>
+
+
+
+
+        </section>
+        
+        
+
+        <section id="section4">
+      <h3>2.1 osa: Vormid, enda tehtud</h3>
+           <form id="form2">
+            <div class="col-md-9">
+                <h2 class="select-header-block">
+                    Vali tarneviis</h2><br>
+                <div class="select-card">
+                    <div class="select-box">
+                        <label class="radio">
+                            <input type="radio" id="tarne" name="order[0][delivery]" value="shop" class="sc-input-radio transport-radio trigger-wrapper-radio" id="myself-radio">
+                            <span class="outer"><span class="inner"></span></span>
+                            Tulen ise järgi
+                        </label>
+                    </div>
+                    <div class="select-box">
+                        <label class="radio">
+                            <input type="radio" id="tarne" name="order[0][delivery]" value="courier" class="sc-input-radio trigger-wrapper-radio transport-radio" data-optional="itella-time-wrapper" id="smartkuller-radio">
+                            <span class="outer"><span class="inner"></span></span>
+                            Itella SmartKuller
+                        </label>
+                        <span class="itella-time-wrapper hide">
+                            <div class="select"><select name="order[0][delivery_time]" class="select-hidden">
+                                    <option value="" class="select-heading">Vali aeg</option>
+                                    <option value="any">Igal ajal</option>
+                                    <option value="day">9-17</option>
+                                    <option value="evening">17-21</option>
+                                </select>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="select-box large-select">
+                        <label class="radio">
+                            <input type="radio" id="tarne" name="order[0][delivery]" value="itella" class="sc-input-radio trigger-wrapper-radio transport-radio" data-optional="itella-location" id="smartpost-radio">
+                            <span class="outer"><span class="inner"></span></span>
+                            Itella SmartPOST pakiautomaat
+                        </label>
+                        <span class="itella-location hide">
+                            <div class="select optional"><select name="order[0][itella_id]" class="optional select-hidden">
+                                    <option value="" class="select-heading">Vali pakiautomaat</option>
+                                    <optgroup label="Tallinn/Harjumaa">
+                                        <option value="552">Haapsalu Kaubamaja Konsum (valge) (Tallinna maantee 1)</option>
+                                        <option value="183">Jüri Konsum (Aruküla tee 29)</option>
+                                        <option value="240">Kehra Grossi kpl (Kose maantee 7)</option>
+                                        <option value="217">Keila Grossi kpl (Piiri 7)</option>
+                                        <option value="134">Keila Selver (Piiri 12)</option>
+                                        <option value="242">Kiili Maxima (Vaela tee 4)</option>
+                                        <option value="538">Kose Grossi kpl pakimajake (valge) (Kodu 2)</option>
+                                        <option value="205">Kuusalu Grossi kpl (Mäe 1)</option>
+                                        <option value="531">Kuusalu Meie pood (valge) (Kuusalu tee 39)</option>
+                                        <option value="133">Laagri Maksimarket (Pärnu mnt 558a)</option>
+                                        <option value="203">Laagri Selver (Pärnu mnt. 554)</option>
+                                        <option value="523">Laulasmaa Selver ABC (valge) (Kloogaranna tee 26)</option>
+                                        <option value="543">Leesi poemaja (valge) (Poe)</option>
+                                        <option value="207">Loo Grossi kpl (Saha tee 9)</option>
+                                        <option value="161">Maardu Maxima (Keemikute 2)</option>
+                                        <option value="219">Maardu Pärli Keskus (Nurga 3)</option>
+                                        <option value="178">Muuga Maxima (Altmetsa 1)</option>
+                                        <option value="551">Narva Fama Keskus (valge) (Fama põik 10)</option>
+                                        <option value="540">Paldiski Grossi kpl pakimajake (valge) (Rae 26)</option>
+                                        <option value="506">Peetri Keskus (valge) (Küti tee 4)</option>
+                                        <option value="179">Peetri Selver (Veesaare tee 2)</option>
+                                        <option value="174">Raudalu Konsum (Viljandi mnt. 41a)</option>
+                                        <option value="156">Saku Selver (Üksnurme tee 2)</option>
+                                        <option value="177">Saue Maxima (Ladva 1a)</option>
+                                        <option value="180">Tabasalu Rimi (Klooga mnt 10b)</option>
+                                        <option value="225">Tallinna Arsenali Keskus (Erika 14)</option>
+                                        <option value="228">Tallinna Astangu Rimi (Kotermaa tn 4)</option>
+                                        <option value="208">Tallinna Balti Jaama Turg (Kopli 1)</option>
+                                        <option value="234">Tallinna Finest ärimaja (Pärnu mnt 22)</option>
+                                        <option value="121">Tallinna Haabersti Rimi (Haabersti 1)</option>
+                                        <option value="214">Tallinna Hiiu Rimi (Pärnu mnt. 386)</option>
+                                        <option value="126">Tallinna Järve Keskus (Pärnu mnt. 238)</option>
+                                        <option value="185">Tallinna Kadaka Selver (Kadaka tee 56A)</option>
+                                        <option value="213">Tallinna Kakumäe Selver (Rannamõisa tee 6e)</option>
+                                        <option value="199">Tallinna Kärberi Selver (K. Kärberi 20/20a)</option>
+                                        <option value="160">Tallinna Kaubamaja (Gonsiori 2)</option>
+                                        <option value="233">Tallinna Kolde Selver (Sõle tn 31)</option>
+                                        <option value="527">Tallinna Kollane keskus (valge) (Õismäe tee 107a)</option>
+                                        <option value="146">Tallinna Kristiine Keskus 1.korrus (Endla 45)</option>
+                                        <option value="227">Tallinna Kristiine Keskus 2.korrus (Endla 45)</option>
+                                        <option value="175">Tallinna Läänemere Selver (Läänemere tee 28)</option>
+                                        <option value="120">Tallinna Lasnamäe Centrum (RIMI) (Mustakivi tee 13)</option>
+                                        <option value="220">Tallinna Lasnamäe Maksimarket (J. Smuuli tee 43)</option>
+                                        <option value="103">Tallinna Lasnamäe Prisma (Mustakivi tee 17)</option>
+                                        <option value="516">Tallinna Linnamäe Konsum (valge) (Linnamäe tee 3)</option>
+                                        <option value="164">Tallinna Magistrali Keskus (Sõpruse pst 201/203)</option>
+                                        <option value="231">Tallinna Männiku Rimi (Männiku tee 100)</option>
+                                        <option value="520">Tallinna Marienthali Selver (valge) (Mustamäe tee 16)</option>
+                                        <option value="206">Tallinna Marja Grossi kpl (Mustamäe tee 41)</option>
+                                        <option value="102">Tallinna Merimetsa Selver (Paldiski mnt 56)</option>
+                                        <option value="195">Tallinna Mustamäe Keskus (A. H. Tammsaare tee 104a)</option>
+                                        <option value="138">Tallinna Mustika Prisma (Tammsaare tee 116 )</option>
+                                        <option value="230">Tallinna Nautica Keskus (Ahtri 9)</option>
+                                        <option value="544">Tallinna Nõmme keskus (valge) (Jaama 2)</option>
+                                        <option value="235">Tallinna Nurmenuku Rimi (Ehitajate tee 107)</option>
+                                        <option value="528">Tallinna Õismäe Maxima XX (valge) (Õismäe tee 46)</option>
+                                        <option value="545">Tallinna Pääsküla Maxima (valge) (Pärnu mnt 536b)</option>
+                                        <option value="536">Tallinna Pelgulinna Selver (valge) (Sõle 51)</option>
+                                        <option value="216">Tallinna Pirita Keskus (Merivälja tee 24)</option>
+                                        <option value="125">Tallinna Pirita Selver (Rummu tee 4)</option>
+                                        <option value="193">Tallinna Priisle Maxima XXX (Linnamäe tee 57)</option>
+                                        <option value="153">Tallinna Rocca Al Mare Keskus (Paldiski mnt 102)</option>
+                                        <option value="537">Tallinna Sadam D-terminal (valge) (Lootsi 13)</option>
+                                        <option value="154">Tallinna Sikupilli Prisma (Tartu mnt 87)</option>
+                                        <option value="141">Tallinna Smuuli Maxima (Smuuli tee 9)</option>
+                                        <option value="155">Tallinna Solaris Keskus (Estonia pst. 9)</option>
+                                        <option value="524">Tallinna Sõpruse pst Maxima (valge) (Sõpruse pst. 171)</option>
+                                        <option value="250">Tallinna Sõpruse Rimi (Sõpruse pst. 174)</option>
+                                        <option value="200">Tallinna Stockmann (Liivalaia 53)</option>
+                                        <option value="188">Tallinna Stroomi Keskus (Tuulemaa 20)</option>
+                                        <option value="226">Tallinna T1 Kaubanduskeskus (Peterburi tee 2)</option>
+                                        <option value="204">Tallinna Tähesaju Selver (Tähesaju tee 1)</option>
+                                        <option value="137">Tallinna Tondi Selver (Tammsaare tee 62)</option>
+                                        <option value="519">Tallinna Tööstuse Rimi (valge) (Tööstuse 103)</option>
+                                        <option value="122">Tallinna Torupilli Selver (Vesivärava 37)</option>
+                                        <option value="187">Tallinna Ülemiste keskus (Suur-Sõjamäe 4)</option>
+                                        <option value="194">Tallinna Vilde tee Maxima XX (Vilde tee 77)</option>
+                                        <option value="530">Tallinna Virbi Maxima (valge) (Virbi 12)</option>
+                                        <option value="215">Tallinna Viru Keskus (Viru väljak 4/6)</option>
+                                        <option value="139">Viimsi Kaubanduskeskus (Delice) (Randvere tee 6)</option>
+                                        <option value="192">Viimsi Keskus (Selver) (Sõpruse tee 15)</option>
+                                        <option value="252">Viimsi Maxima (Pargi tee 22)</option>
+                                    </optgroup>
+                                    <optgroup label="Saaremaa">
+                                        <option value="223">Auriga Keskus (Tallinna 88)</option>
+                                        <option value="157">Kuressaare Kihelkonna mini-Rimi (Kihelkonna mnt. 3)</option>
+                                        <option value="116">Kuressaare Saare Selver (Tallinna 67)</option>
+                                        <option value="507">Kuressaare Wow keskus (valge) (Merikotka 1)</option>
+                                        <option value="535">Orissaare bussijaam (valge) (Kuivastu mnt 26a)</option>
+                                    </optgroup>
+                                    <optgroup label="Jõgevamaa">
+                                        <option value="111">Jõgeva Kaubahall (Aia 3)</option>
+                                        <option value="202">Jõgeva Pae Konsum (Aia 33)</option>
+                                        <option value="525">Mustvee konsum (valge) (Tartu 3)</option>
+                                        <option value="123">Põltsamaa Selver (Jõgeva mnt. 1a)</option>
+                                    </optgroup>
+                                    <optgroup label="Hiiumaa">
+                                        <option value="533">Kärdla Hiiu Konsum (valge) (Keskväljak 1)</option>
+                                        <option value="115">Kärdla Selver (Rehemäe, Linnumäe küla, Pühalepa vald)</option>
+                                    </optgroup>
+                                    <optgroup label="Ida-Virumaa">
+                                        <option value="198">Ahtme Maxima (Puru tee 77)</option>
+                                        <option value="184">Jõhvi Grossi kpl (Tartu mnt 15a)</option>
+                                        <option value="108">Jõhvi Tsentraal (Keskväljak 4)</option>
+                                        <option value="238">Kiviõli K5 keskus (Metsa 3)</option>
+                                        <option value="131">Kohtla-Järve Vironia Keskus (Järveküla tee 50)</option>
+                                        <option value="109">Narva Astri Keskus (Tallinna mnt 41)</option>
+                                        <option value="181">Narva Prisma (Kangelaste prospekt 29)</option>
+                                        <option value="249">Sillamäe Maxima XX (Pavlovi tn 1a)</option>
+                                    </optgroup>
+                                    <optgroup label="Järvamaa">
+                                        <option value="247">Imavere Alexela (Paiaristi)</option>
+                                        <option value="182">Paide Maksimarket (Ringtee 2)</option>
+                                        <option value="517">Paide Maxima (valge) (Pärnu 63)</option>
+                                        <option value="112">Paide Selver (Aiavilja 4)</option>
+                                        <option value="539">Türi Grossi kpl pakimajake (valge) (Viljandi 13d)</option>
+                                        <option value="143">Türi mini-Rimi (Paide 26)</option>
+                                    </optgroup>
+                                    <optgroup label="Pärnumaa">
+                                        <option value="526">Kilingi-Nõmme Konsum (valge) (Pärnu 37)</option>
+                                        <option value="246">Paikuse Konsum (Pärnade pst. 1)</option>
+                                        <option value="534">Pärnu Jaagupi kauplus (valge) (Pärnu maantee 18)</option>
+                                        <option value="117">Pärnu Kaubamajakas (Papiniidu 8)</option>
+                                        <option value="130">Pärnu Keskus (Aida 7)</option>
+                                        <option value="189">Pärnu Mai Selver (Papiniidu 42)</option>
+                                        <option value="173">Pärnu Maksimarket (Haapsalu mnt 43)</option>
+                                        <option value="158">Pärnu Maxima XXX (Riia mnt 131)</option>
+                                        <option value="224">Pärnu Port Artur 2 (Lai 11)</option>
+                                        <option value="509">Pärnu Turg (valge) (Suur-Sepa 18)</option>
+                                        <option value="127">Pärnu Ülejõe Selver (Tallinna mnt 93a)</option>
+                                        <option value="245">Sauga Konsum (Kuldnoka 1)</option>
+                                        <option value="518">Sindi Konsum (valge) (Jaama 8)</option>
+                                        <option value="251">Vana Pärnu Selver ABC (Haapsalu maantee 41)</option>
+                                        <option value="142">Vändra Konsum (Pärnu-Paide mnt. 21)</option>
+                                    </optgroup>
+                                    <optgroup label="Põlvamaa">
+                                        <option value="128">Põlva Edu Keskus (Aasa 1)</option>
+                                        <option value="501">Põlva Selver (valge) (Jaama 12)</option>
+                                        <option value="239">Räpina Maxima (Pargi 1)</option>
+                                        <option value="549">Tammiste Konsum (valge) (Kellukese tee 2)</option>
+                                        <option value="547">Valga Siili Konsum (valge) (A. Neulandi 2 )</option>
+                                    </optgroup>
+                                    <optgroup label="Lääne-Virumaa">
+                                        <option value="241">Haljala Grossi kpl (Võsu mnt 5)</option>
+                                        <option value="522">Kadrina Grossi kpl (valge) (Viru 9)</option>
+                                        <option value="521">Kunda Grossi kpl (valge) (Kasemäe 12)</option>
+                                        <option value="110">Rakvere Kroonikeskus (F. G. Adoffi 11)</option>
+                                        <option value="152">Rakvere Põhjakeskus (Tõrremäe, Rakvere vald)</option>
+                                        <option value="221">Rakvere Vaala Keskus (Lõõtspilli 2)</option>
+                                        <option value="147">Tapa Bussijaam (Sauna 1)</option>
+                                        <option value="229">Tapa Konsum (Kalmistu 3)</option>
+                                    </optgroup>
+                                    <optgroup label="Raplamaa">
+                                        <option value="505">Järvakandi Grossi kpl (valge) (Turu 1)</option>
+                                        <option value="243">Kohila Konsum (Lõuna 2)</option>
+                                        <option value="145">Märjamaa Konsum (Pärnu mnt 62)</option>
+                                        <option value="113">Rapla Maxima (Tallinna mnt 50a)</option>
+                                        <option value="190">Rapla Selver (Tallinna maantee 4)</option>
+                                    </optgroup>
+                                    <optgroup label="Tartumaa">
+                                        <option value="209">Elva Maxima (Valga maantee 5)</option>
+                                        <option value="144">Elva mini-Rimi (Kesk 7)</option>
+                                        <option value="511">Rõngu Konsum (valge) (Tartu maantee 2)</option>
+                                        <option value="172">Tartu Aardla Selver (Võru 77)</option>
+                                        <option value="171">Tartu Anne Prisma (Nõlvaku tee 2)</option>
+                                        <option value="106">Tartu Anne Selver (Kalda tee 43)</option>
+                                        <option value="150">Tartu Eeden (Kalda tee 1c)</option>
+                                        <option value="201">Tartu Kaubamaja -1 korrus (Riia 1)</option>
+                                        <option value="176">Tartu Kaubamaja 0 korrus (Riia 1)</option>
+                                        <option value="210">Tartu Kvartal (Riia 2)</option>
+                                        <option value="166">Tartu Lembitu Konsum (Lembitu tn. 2)</option>
+                                        <option value="107">Tartu Lõunakeskuse Rimi (Ringtee 75)</option>
+                                        <option value="512">Tartu Mõisavahe Konsum (valge) (Mõisavahe 34c)</option>
+                                        <option value="163">Tartu Raadi Maxima (Narva mnt 112/Peetri 26B)</option>
+                                        <option value="541">Tartu Raatuse Selver ABC (valge) (Raatuse 20)</option>
+                                        <option value="136">Tartu Rebase Rimi (Rebase 10)</option>
+                                        <option value="169">Tartu Ringtee Selver (Aardla 114)</option>
+                                        <option value="211">Tartu Saare Maxima (Anne 57)</option>
+                                        <option value="513">Tartu Sepa Rimi (valge) (Sepa 21)</option>
+                                        <option value="502">Tartu Sõbra Selver (valge) (Sõbra 41)</option>
+                                        <option value="218">Tartu Sõbrakeskus (Võru 55F)</option>
+                                        <option value="135">Tartu Tasku (Turu 2)</option>
+                                        <option value="248">Tartu Tuglase Rimi (Friedebert Tuglase 19)</option>
+                                        <option value="510">Tartu Ujula Konsum (valge) (Ujula 2)</option>
+                                        <option value="212">Tartu Vahi Selver (Vahi 62)</option>
+                                        <option value="196">Tartu Veeriku Selver (Vitamiini 1)</option>
+                                        <option value="508">Tõrvandi Konsum (valge) (Müürsepa 1)</option>
+                                        <option value="237">Ülenurme Konsum (Võru mnt. 2)</option>
+                                    </optgroup>
+                                    <optgroup label="Läänemaa">
+                                        <option value="167">Haapsalu Rimi (Jaama 32)</option>
+                                        <option value="515">Haapsalu Uuemõisa Konsum (valge) (Tallinna maantee 84)</option>
+                                        <option value="114">Rannarootsi Keskus (Rannarootsi tee 1)</option>
+                                    </optgroup>
+                                    <optgroup label="Valgamaa">
+                                        <option value="149">Otepää Maxima (Valga mnt 1B)</option>
+                                        <option value="148">Tõrva Maxima (Tamme 2)</option>
+                                        <option value="546">Tõrva Tikste Konsum (valge) (Viljandi 28)</option>
+                                        <option value="118">Valga Selver (Raja 5)</option>
+                                    </optgroup>
+                                    <optgroup label="Viljandimaa">
+                                        <option value="244">Viljandi Centrum (Tallinna 24)</option>
+                                        <option value="101">Viljandi Männimäe Selver (Riia mnt 35)</option>
+                                        <option value="191">Viljandi Turu Konsum (Turu 16)</option>
+                                        <option value="162">Viljandi Uku keskus (Tallinna tn. 41)</option>
+                                        <option value="514">Viljandi Vaksali Maxima (valge) (Vaksali 11b)</option>
+                                        <option value="529">Võhma Meie pood (valge) (Tallinna 28a)</option>
+                                    </optgroup>
+                                    <optgroup label="Võrumaa">
+                                        <option value="542">Antsla Konsum (valge) (Kreutzwaldi 4a)</option>
+                                        <option value="504">Vastseliina Konsum (valge) (Võidu 21)</option>
+                                        <option value="119">Võru Kagukeskus (Kooli 6)</option>
+                                        <option value="503">Võru Maksimarket (valge) (Jüri 83)</option>
+                                        <option value="168">Võru Rimi (Jüri 85)</option>
+                                    </optgroup>
+                                </select> 
+                            </div>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            
+        <div id="calc2">
+                    <input type="submit" value="Kinnita tarneviis" id="btn-tarne">
+                </div>
+
+</form>
+        </section>
+
+
+
+        <hr>
+        <section id="section3">
+            <h3>3. osa: Kaart</h3>
+            <div id="map"></div>
+        </section>
+    </main>
+    <script type='text/javascript' src="script.js"></script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AqLLRE37SJGqIxXEYxezPUa6fF2oCzl3cvG4n05FtFIVBrotBYxchpMYYpwuxBak]' async defer></script>
+</body>
+
+</html>
